@@ -1,0 +1,16 @@
+.tree li{
+	width:100%;
+	text-align:left;
+	background:rgba(4,37,72,0.9);
+	color:#fff;
+}
+ .tree-node .tree-node-selected, .tree-node-hover,.tree-node-selected{
+	   background:#3963A5;
+	}
+ .textmain .textbox-text{
+		background:#054b86;
+	 	border-radius:0;
+	}
+ .textmain span{
+	 margin-right:0;
+	}

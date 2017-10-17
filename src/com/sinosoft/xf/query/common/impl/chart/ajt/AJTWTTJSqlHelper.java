@@ -1,0 +1,40 @@
+package com.sinosoft.xf.query.common.impl.chart.ajt;
+
+import com.runqian.report4.usermodel.Context;
+import com.sinosoft.xf.query.common.iface.SqlHelper;
+
+public class AJTWTTJSqlHelper extends AJTSqlHelper {
+
+	public AJTWTTJSqlHelper(Context ctx) {
+		super(ctx);
+	};
+
+//	@Override
+//	protected int getSqlType(){
+//		String isContainSuper = (String) getCtx().getParamValue("isContainSuper");
+//		if(isContainSuper!=null && "0".equals(isContainSuper.trim()))
+//			return SqlHelper.BWJCL;
+//		else
+//			return SqlHelper.BWALLJCL;
+//	}
+	@Override
+	protected String sqlBody() {
+		return getSqlBody().getJclSqlBody()+condition();
+	}
+
+	@Override
+	public String geneCountSql() {
+		return wttj();
+	}
+
+	@Override
+	protected void addCustomMacros() {
+		getMacros().joinIssueTable();
+	}
+
+	@Override
+	public String[] fields() {
+		return wtFields();
+	}
+
+}

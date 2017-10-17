@@ -1,0 +1,36 @@
+<Configuration>
+  <ConfigClassify name="FulltextRetrieval" description="FulltextRetrievalConfig">
+    <!-- 配置数据库表主键名称  -->
+    <Field name="primaryKeyName" value="oid" description="" />
+    <!-- 配置分页创建索引时，每页的记录数。对于该值，开发或维护人员不宜设置过大，如一般设置10万左右就容易导致内存溢出等。  -->
+    <Field name="rowsPerPage" value="5000" description="" />
+    <!-- 配置索引检索时，最多能检索到的相似度最高的记录条数  -->
+    <Field name="resultNums" value="150000" description="" />
+   
+    <!-- 配置跨索引检索时，作为标题的索引域字段串，“,”号间隔，且各字段顺序即为标题中对应值的拼接顺序 -->
+    <Field name="titleFieldStr" value="petition_basic_info__petition_title" description="" />
+    <!-- 配置跨索引检索时，作为内容的索引域字段串，“,”号间隔，且各字段顺序即为内容中对应值的拼接顺序 -->
+    <Field name="contentFieldStr" value="petition_issue_info__issue_content" description="" />
+    
+  </ConfigClassify>
+  
+  <!-- 配置联合查询视图view的字段 与 数据库表的字段间映射关系 -->
+  <ConfigClassify name="ViewAndTableMapping" description="FulltextRetrievalConfig">
+    <!-- 视图中字段xftypecode__codename对应的数据库表和字段表示形式 
+    <Field name="xftypecode__codename" value="xfscode__codename" description="" />
+    <Field name="xfsourcecode__codename" value="xfscode__codename" description="" />
+    <Field name="xfclasscode__codename" value="xfscode__codename" description="" />
+    <Field name="dealtypecode__codename" value="xfscode__codename" description="" />
+    <Field name="pretreatmentcode__codename" value="xfscode__codename" description="" />
+     -->
+  </ConfigClassify>  
+  
+  <!-- 配置联合查询视图view中不属于任何表的临时增设字段 -->
+  <ConfigClassify name="TemporaryFieldInView" description="FulltextRetrievalConfig">
+    <Field name="isreply" value="isreply" description="" />
+    <Field name="isrepeat" value="isrepeat" description="" />
+    <Field name="isinstruction" value="isinstruction" description="" />
+    <Field name="instruction" value="instruction" description="" />
+    <Field name="deptcode" value="deptcode" description="" />
+  </ConfigClassify>  
+</Configuration>

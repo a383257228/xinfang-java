@@ -1,0 +1,267 @@
+	.header{
+			height:109px; background-image: url('./images/top_bg.jpg');background-size:100% 100%
+		}
+		h2{
+			 font-family:"Microsoft YaHei", Arial, Helvetica, sans-serif;
+			 font-weight:400;
+		}
+		
+		.header h2 {
+			margin:0px;
+			 font-family:"Microsoft YaHei", Arial, Helvetica, sans-serif;
+			  padding: 20px;
+			  padding-left: 70px;
+			  font-size: 24px;
+			  color: white;
+			  background: url(./images/logo.png) no-repeat 20px center;
+			}
+	.tabs-header, .tabs-tool{
+		background-color: #fff
+	}
+.accordion 	.panel-header{
+		background-color: #2065cb;
+  		background: -webkit-linear-gradient(top,#2065cb 0,#2065cb 100%);
+ 		 background: -moz-linear-gradient(top,#2065cb 0,#2065cb 100%);
+  		background: -o-linear-gradient(top,#2065cb 0,#2065cb 100%);
+        background: linear-gradient(to bottom,#2065cb 0,#2065cb 100%); 
+        padding:10px;
+	}
+
+.accordion .accordion-header {
+  background: #2065cb;
+  filter: none;
+}
+.accordion .accordion-header:hover {
+background: #fff
+
+}
+.accordion .accordion-header:hover   	.panel-title{
+color: #000
+}
+.accordion .panel-header:hover:before{
+	width:35px;
+	height: 36px;
+	background-color: #ff7e00;
+	position: absolute;
+	content:"";
+	top:0px;
+	left:0px;
+}
+.accordion .panel-header:before{
+	width:35px;
+	height: 36px;
+	background-color: #002f74;
+	position: absolute;
+	content:"";
+	top:0px;
+	left:0px;
+}
+.panel-icon, .panel-tool{
+	top:15px;
+}
+.accordion  .panel-with-icon{
+		padding-left:38px;
+}
+.accordion  .panel-tool{
+display: none !important;
+}
+.accordion 	.panel-header	.panel-title{
+	font-size: 21px;
+	font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+	color: #fff
+}
+.accordion {
+  background: #7bb1ff;
+  border-color: #95B8E7;
+}
+.accordion .panel-body{
+	background: #7bb1ff;
+}
+
+.tabs li a.tabs-inner {
+	background: -webkit-linear-gradient(#0267ff, #71aaff);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#0267ff, #71aaff);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#0267ff, #71aaff);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#0267ff, #71aaff); 
+}
+.tabs li a:hover.tabs-close {
+  background-color: transparent;
+}
+
+div[name='contenttab'] .tabs-header{
+	padding: 0px;
+}
+
+div[name='contenttab']  .tabs-header, .tabs-tool{
+background-color:  #2065cb;
+background: url('./images/bgtop.png') ;
+}
+
+.accordion .tree-node{
+	height: 38px;
+	position: relative;
+	left:25px;
+	background:#002f74 ;
+	margin-bottom:5px;
+}
+.accordion ul{
+	overflow: hidden;
+}
+.accordion .tree-node:hover{
+		background:#fff;
+		color:#002f74;
+}
+.accordion .tree-node-selected{
+		background:#fff  !important;
+		color:#002f74;
+}
+.accordion .tree-node span{
+	margin-top: 12px;
+	font-size: 19px;
+	font-family: "΢���ź�";
+	color: #fff
+}
+.tree-node-selected  .tree-title{
+	color: black !important;
+	
+}
+.accordion .tree-node:hover .tree-title{
+		color: black !important;
+}
+#west .panel-header,
+#west .panel-body {
+  border: 0px;
+}
+#west .accordion-body{
+	margin: 12px 0px
+}
+#00fd01561c2f2c89000c{
+	margin: 0px
+}
+
+
+#west{
+ border: 0px;
+}
+
+.right-menus,.right-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 99;
+}
+
+
+.right-menu a.user-center {
+  width: 146px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+  -webkit-border-radius: 33px;
+  -moz-border-radius: 33px;
+  border-radius: 33px;
+  border: 1px solid #758cad;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.33);
+  position: relative;
+}
+.right-menu a.user-center:before {
+  content: '';
+  width: 17px;
+  height: 16px;
+  background-image: url(./publicresource/css/icons/sprite.png);
+  background-repeat: no-repeat;
+  display: block;
+  background-position: -40px -80px;
+  position: absolute;
+  left: 20px;
+  top: 8px;
+}
+.right-menu a.user-center:after {
+  content: '';
+  width: 9px;
+  height: 5px;
+  background-image: url(./publicresource/css/icons/sprite.png);
+  background-repeat: no-repeat;
+  display: block;
+  background-position: -191px 0px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.right-menu a.user-center:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+.right-menu ul.user-center-menu {
+	display: none;
+	width: 142px;
+	height: 85px;
+	margin-left: 4px;
+	background: url(./images/drop_down_bg.png) no-repeat;
+	margin:0px;
+	padding:0px;
+	padding-top: 30px;
+	z-index:999999999;
+	background-size: 100% 100%;
+}
+.right-menu ul.user-center-menu li {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-top: 5px;
+}
+.right-menu ul.user-center-menu li a {
+  width: 84px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  color: white;
+}
+.right-menu ul.user-center-menu li a:hover {
+  background: #0b6dff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+ #p {
+  text-align: right;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 5;
+  margin-top: 5;
+}
+ #p a.menu-toggle {
+  width: 34px;
+  height: 28px;
+  float: right;
+  -webkit-border-radius: 28px 0px 0px 28px;
+  -moz-border-radius: 28px 0px 0px 28px;
+  border-radius: 28px 0px 0px 28px;
+  background-image: url(./publicresource/css/icons/sprite.png);
+  background-repeat: no-repeat;
+  display: block;
+  background-color: #2065cb;
+  background-position: -184px -71px;
+  -moz-transition: width linear 0.3s;
+  -o-transition: width linear 0.3s;
+  -webkit-transition: width linear 0.3s;
+  transition: width linear 0.3s;
+}
+ #p a.menu-toggle:hover {
+  -moz-animation: all 0.3s;
+  -o-animation: all 0.3s;
+  -webkit-animation: all 0.3s;
+  animation: all 0.3s;
+  width: 45px;
+}
+ #p a.menu-toggle.close {
+  background-position: -184px -71px;
+}

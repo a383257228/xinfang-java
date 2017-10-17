@@ -1,0 +1,12 @@
+#elasticsearch server host and port
+HOST_PORTS=127.0.0.1:9300,127.0.0.1:9301,127.0.0.1:9302
+CLUSTER_NAME=my-application
+DEFAULT_INDEX_NAME=petitioninfo
+DEFAULT_INDEX_TYPE=petitionissue
+DATE_FORMAT=yyyy-MM-dd HH\:mm\:ss
+
+#业务库数据源
+DB_JDBC_DRIVER=com.ibm.db2.jcc.DB2Driver
+DB_JDBC_URL=jdbc:db2://localhost:50000/nshdb
+DB_JDBC_USERNAME=db2admin
+DB_JDBC_PASSWORD=X8F3j9u8b3a1o

@@ -1,0 +1,63 @@
+{
+	"properties": {
+		"petitionTypeName": {
+			"index": "not_analyzed",
+			"type": "text"
+		},
+		"issueContent": {
+			"search_analyzer": "ik_smart",
+			"analyzer": "ik_max_word",
+			"boost": 9999,
+			"term_vector": "with_positions_offsets_payloads",
+			"type": "text"
+		},
+		"petitionNo": {
+			"index": "not_analyzed",
+			"type": "text"
+		},
+		"petitionClassName": {
+			"index": "not_analyzed",
+			"type": "text"
+		},
+		"regionCode": {
+			"index": "not_analyzed",
+			"type": "text"
+		},
+		"oid": {
+			"index": "no",
+			"type": "text"
+		},
+		"petitionTitle": {
+			"search_analyzer": "ik_smart",
+			"analyzer": "ik_max_word",
+			"boost": 9999,
+			"type": "text"
+		},
+		"suggest": {
+			"index": "not_analyzed",
+			"type": "keyword",
+			"fields": {
+				"suggest_full_pinyin": {
+					"search_analyzer": "simple",
+					"analyzer": "full_pinyin_letter_analyzer",
+					"fielddata" : true,
+					"type": "text"
+				},
+				"suggest_first_py": {
+					"analyzer": "first_py_letter_analyzer",
+					"fielddata" : true,
+					"type": "text"
+				},
+				"suggest_simple": {
+					"analyzer": "whitespace",
+					"fielddata" : true,
+					"type": "text"
+				}
+			}
+		},
+		"petitionDate": {
+			"format": "yyyy-MM-dd HH:mm:ss",
+			"type": "date"
+		}
+	}
+}

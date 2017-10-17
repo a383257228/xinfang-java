@@ -1,0 +1,596 @@
+[
+    {
+        oid: '00fd0151c268de86001c',
+        text: '违反政治纪律行为',
+        codeType: 'WTXZ',
+        systemCodeId: '2',
+        id: '9',
+        parentId: '00fd0131fb3f2c700016',
+        leaf: false,
+        state: 'closed',
+        allowDelete: true,
+        allowChildren: true,
+        children: [
+            {
+                oid: '00fd0151c269ad860029',
+                text: '公开发表危害党的言论',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '15',
+                parentId: '',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c26d7e120057',
+                text: '参加反对党和政府的活动或组织',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '16',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c26dd7880060',
+                text: '在党内搞团团伙伙',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '17',
+                parentId: '',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c26e26810069',
+                text: '妨碍党和国家方针政策实施',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '18',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c26e84710072',
+                text: '对抗组织审查',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '19',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c26ed078007b',
+                text: '组织参加迷信活动',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '20',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c26f20160084',
+                text: '叛逃及涉外活动中损害党和国家利益',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '21',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c26f7466008d',
+                text: '无原则一团和气和违反政治规矩',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '21',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            }
+        ]
+    },
+    {
+        oid: '00fd0151c27007be0096',
+        text: '违反组织纪律行为',
+        codeType: 'WTXZ',
+        systemCodeId: '2',
+        id: '10',
+        parentId: '00fd0131fb3f2c700016',
+        leaf: false,
+        state: 'closed',
+        allowDelete: true,
+        allowChildren: true,
+        children: [
+            {
+                oid: '00fd0151c2705323009f',
+                text: '违反民主集中制原则',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '23',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c2709cc600a8',
+                text: '不按要求请示报告有关事项',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '24',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c27108ee00b1',
+                text: '违规组织参加老乡会校友会战友会',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '25',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c271842c00c3',
+                text: '侵犯党员权利',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '26',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c2728b8700d7',
+                text: '在投票和选举中搞非组织活动',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '27',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c27dfb03011f',
+                text: '违反干部选拔任用规定',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '28',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c27ee3be012a',
+                text: '在人事劳动工作中违规谋利',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '29',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c27f10fc0130',
+                text: '违规发展党员',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '30',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c27f39e10136',
+                text: '违规办理出国证件和在境外脱离组织',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '31',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            }
+        ]
+    },
+    {
+        oid: '00fd0151c281c1f10141',
+        text: '违反廉洁纪律行为',
+        codeType: 'WTXZ',
+        systemCodeId: '2',
+        id: '11',
+        parentId: '00fd0131fb3f2c700016',
+        leaf: false,
+        state: 'closed',
+        allowDelete: true,
+        allowChildren: true,
+        children: [
+            {
+                oid: '00fd0151c2821f57014a',
+                text: '权权交易和纵容特定关系人以权谋私',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '32',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c2824a0d0150',
+                text: '违规接受礼品礼金宴请服务',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '33',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c28263fa0156',
+                text: '违规操办婚丧喜庆事宜',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '34',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c2827f89015c',
+                text: '违规从事营利活动',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '35',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c28295620162',
+                text: '违反工作生活待遇规定',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '36',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c282afd40168',
+                text: '违规占有使用公私财物',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '37',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c282d10f016e',
+                text: '违规参与公款宴请消费',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '38',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c282e90a0174',
+                text: '违规自定薪酬和发放津贴补贴奖金',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '39',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c2830473017a',
+                text: '公款旅游',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '40',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c28325380180',
+                text: '违反公务接待管理规定',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '41',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c28345960186',
+                text: '违反公务用车管理规定',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '42',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c28368e5018c',
+                text: '违反会议活动管理规定',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '43',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c28385870192',
+                text: '违反办公用房管理规定',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '44',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c283ecab01a1',
+                text: '权色钱色交易',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '45',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c284089901a7',
+                text: '其他',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '46',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            }
+        ]
+    },
+    {
+        oid: '00fd0151c2843da501b0',
+        text: '违反群众纪律行为',
+        codeType: 'WTXZ',
+        systemCodeId: '2',
+        id: '12',
+        parentId: '00fd0131fb3f2c700016',
+        leaf: false,
+        state: 'closed',
+        allowDelete: true,
+        allowChildren: true,
+        children: [
+            {
+                oid: '00fd0151c284841301b9',
+                text: '侵害群众利益',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '47',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c2849b8001bf',
+                text: '漠视群众利益',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '48',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c284b59a01c5',
+                text: '侵犯群众知情权',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '49',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c284db6001cb',
+                text: '其他违反群众纪律行为',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '50',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            }
+        ]
+    },
+    {
+        oid: '00fd0151c285028301d4',
+        text: '违反工作纪律行为',
+        codeType: 'WTXZ',
+        systemCodeId: '2',
+        id: '13',
+        parentId: '00fd0131fb3f2c700016',
+        leaf: false,
+        state: 'closed',
+        allowDelete: true,
+        allowChildren: true,
+        children: [
+            {
+                oid: '00fd0151c28542ce01dd',
+                text: '主体责任落实不力',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '51',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c28559f401e3',
+                text: '违规干预市场经济活动',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '52',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c285718a01e9',
+                text: '违规干预执纪执法司法活动',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '53',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c2858bc001ef',
+                text: '泄露扩散窃取私存党的秘密',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '54',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c285a2fe01f5',
+                text: '违反考试录取工作规定',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '55',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c285bbbf01fb',
+                text: '其他违反工作纪律行为',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '56',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            }
+        ]
+    },
+    {
+        oid: '00fd0151c285fef40204',
+        text: '违反生活纪律行为',
+        codeType: 'WTXZ',
+        systemCodeId: '2',
+        id: '14',
+        parentId: '00fd0131fb3f2c700016',
+        leaf: false,
+        state: 'closed',
+        allowDelete: true,
+        allowChildren: true,
+        children: [
+            {
+                oid: '00fd0151c2864113020d',
+                text: '生活奢靡',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '57',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c2865b790213',
+                text: '不正当性关系',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '58',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            },
+            {
+                oid: '00fd0151c286756f0219',
+                text: '其他违反生活纪律行为',
+                codeType: 'WTXZ',
+                systemCodeId: '2',
+                id: '59',
+                parentId: '00fd0131fb3f2c700016',
+                leaf: true,
+                allowDelete: true
+            }
+        ]
+    },
+    {
+        oid: '00fd0151c286afa50222',
+        text: '贪污贿赂行为',
+        codeType: 'WTXZ',
+        systemCodeId: '2',
+        id: '3',
+        parentId: '00fd0131fb3f2c700016',
+        leaf: true,
+        allowDelete: true
+    },
+    {
+        oid: '00fd0151c286c8020228',
+        text: '失职渎职行为',
+        codeType: 'WTXZ',
+        systemCodeId: '2',
+        id: '4',
+        parentId: '00fd0131fb3f2c700016',
+        leaf: true,
+        allowDelete: true
+    },
+    {
+        oid: '00fd0151c286e14c022e',
+        text: '破坏社会主义市场经济秩序行为',
+        codeType: 'WTXZ',
+        systemCodeId: '2',
+        id: '5',
+        parentId: '00fd0131fb3f2c700016',
+        leaf: true,
+        allowDelete: true
+    },
+    {
+        oid: '00fd0151c286ff630234',
+        text: '侵犯人身权利民主权利行为',
+        codeType: 'WTXZ',
+        systemCodeId: '2',
+        id: '6',
+        parentId: '00fd0131fb3f2c700016',
+        leaf: true,
+        allowDelete: true
+    },
+    {
+        oid: '00fd0151c287178b023a',
+        text: '妨害社会管理秩序行为',
+        codeType: 'WTXZ',
+        systemCodeId: '2',
+        id: '7',
+        parentId: '00fd0131fb3f2c700016',
+        leaf: true,
+        allowDelete: true
+    },
+    {
+        oid: '00fd0151c287350d0240',
+        text: '其他涉法行为',
+        codeType: 'WTXZ',
+        systemCodeId: '2',
+        id: '8',
+        parentId: '00fd0131fb3f2c700016',
+        leaf: true,
+        allowDelete: true
+    }
+]

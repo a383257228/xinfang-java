@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<constant name="struts.convention.package.locators" value="web" />
+	<constant name="struts.convention.package.locators.basePackage" value="com.sinosoft" />	
+   <!-- 
+		使用Convention插件,实现约定大于配置的零配置文件风格.
+	             特殊的Result路径在Action类中使用@Result设定. 
+	-->
+	<constant name="struts.convention.action.includeJars" 
+			value=".*/systemcode.*?jar(!/)?,.*/databasetable_v1.10.*?jar(!/)?,.*/quartz.*?jar(!/)?,.*/menu.*?jar(!/)?,.*/authority.*?jar(!/)?,.*/interface.*?jar(!/),.*/upload.*?jar(!/)?,.*/authorityAudit.*?jar(!/)?,.*/sinosoft-log-2.5.*?jar(!/)?" />
+	<!-- 上传大小限制为100M by gaojun-->        			
+	  <constant name= "struts.multipart.maxSize" value="104857600" /> 
+	<constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true" />
+	<constant name="struts.devMode" value="true" />
+	
+	
+	<package name="basepkg" extends="struts-default">
+		<interceptors>
+
+			<!-- 定义拦截器 -->
+			<interceptor name="exceptionInterceptor" class="com.sinosoft.xf.interceptor.ExceptionInterceptor" />
+
+			<!-- 定义拦截器栈 -->
+
+			<interceptor-stack name="commonInterceptorStack">
+
+				<!-- <interceptor-ref name="defaultStack" />  -->
+				<!-- struts2 默认拦截器之一，用于获取前台参数 -->
+				<interceptor-ref name="paramsPrepareParamsStack"  />
+				<!-- 自定义异常拦截器，处理action抛出的异常 -->
+				<interceptor-ref name="exceptionInterceptor" />
+
+				<!-- <interceptor-ref name="拦截器二"/> -->
+
+			</interceptor-stack>
+
+		</interceptors>
+
+		<!-- 定义全局处理结果 -->
+
+		<global-results>
+
+			<!-- 逻辑名为login的结果，映射到/login.jsp页面 -->
+
+			<result name="invalidRequest">/publicresource/jsp/InvalidRequest.jsp</result>
+			<result name="error">/publicresource/jsp/500.jsp</result>
+
+		</global-results>
+	</package>
+
+</struts>

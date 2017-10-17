@@ -1,0 +1,22 @@
+/* 弹窗窗口样式修改   */
+	     .panel-header, .panel-body,.pagination-btn-separator{
+		    border:none
+		 }
+	    .window{
+	       background:rgba(4,37,72,0.9);
+		   border:1px solid #27758C
+		 }
+		 .window .window-header{
+		   background:none
+		 }
+		 .window .panel-title{
+		   font-size:16px;
+		   text-align:center
+		 }
+		 .window-shadow{
+		   width:100% !important;
+		   height:100% !important;
+		   background:rgba(4,37,72,0.2);
+		   left:0 !important;
+		   top:0 !important;
+		 }

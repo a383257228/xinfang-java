@@ -1,0 +1,45 @@
+  .datagrid-header{
+        background:rgba(32,101,203,0.8);
+      }
+  .datagrid-row{
+       background:rgba(231,241,245,0.6) !important     
+	 }
+  .datagrid-cell-rownumber,.datagrid-cell {
+	 font-size:12px !important;
+	 color:#062852;
+	 }
+  .datagrid-row-over  .datagrid-cell{
+	   color:#000000;
+	   
+	 }
+  .datagrid-row-selected, .datagrid-row-over, .datagrid-header td.datagrid-header-over{
+	    background:none
+	 }
+  .datagrid-header .datagrid-cell span, .pagination-info, .pagination span{
+	color:#ffffff;
+	 font-size:13px !important;
+	 }
+	.m-btn-downarrow, .datagrid .datagrid-pager, .datagrid-toolbar{
+	 border:0;
+	 background:none !important;
+	 }
+	 .datagrid-header-cell-arrow-show,  .panel-header, .panel-body,.pagination-btn-separator{
+	 border:none
+	 }
+	 .datagrid-header td, .datagrid-body td, .datagrid-footer td{
+      border-left:none;
+      border-right:none;
+      border-top:none;
+      border-bottom:1px solid #0C5D8C !important; 
+    }
+    .pagination-num,.pagination-page-list{
+    background:#BBD0DE;
+    font-size:14px;
+    text-align:center
+    } 
+    .datagrid-pager, .datagrid-row-over, .m-btn-downarrow{
+    background:rgba(231,241,245,0.8) !important 
+    }
+    .datagrid-row-selected .rowaStyle, .datagrid-row-over a{
+     	/* color:#062852 !important; */
+    }

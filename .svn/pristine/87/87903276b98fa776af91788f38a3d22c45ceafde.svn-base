@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="aaa" class="ch.qos.logback.core.FileAppender">
+		<!-- encoder 默认配置为PatternLayoutEncoder -->
+		<file>d:\testFile.log</file>  
+    	<append>true</append>  
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<appender name="bbb" class="ch.qos.logback.core.FileAppender">
+		<!-- encoder 默认配置为PatternLayoutEncoder -->
+		<file>d:\testFilebbb.log</file>  
+    	<append>true</append>  
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<!-- 在addData.TestLog类中使用logger.info方法输出到aaa中的文件中，additivity为false表示不向上一级输出 -->
+	<logger name="aaa" level="INFO" additivity="false">  
+        <appender-ref ref="aaa" />  
+    </logger>  
+	<logger name="bbb" level="INFO" additivity="false">  
+        <appender-ref ref="bbb" />  
+    </logger>  
+</configuration>  

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:s="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.4.xsd"
+	default-autowire="byType" default-lazy-init="true">
+	<!-- http安全配置
+	accessDenied.jsp 表示无权限访问
+	notLogin.jsp 表示未登陆
+	loginFailure.jsp 表示验证失败
+	app.jsp 表示成功验证后的应用页面
+	 -->
+	<s:http auto-config="true" access-denied-page="/security/accessDenied.jsp" access-decision-manager-ref="accessDecisionManager">
+		<s:form-login login-page="/security/notLogin.jsp" default-target-url="/security/success.jsp"
+			authentication-failure-url="/security/loginFailure.jsp" />
+		<s:logout logout-success-url="/" />
+		<s:remember-me key="e37f4b31-0c45-11dd-bd0b-sinosoft" />
+	<!--	<s:concurrent-session-control max-sessions="1" exception-if-maximum-exceeded="true"/>  -->
+	</s:http>
+
+
+
+	<!-- 认证配置 -->
+	<s:authentication-provider user-service-ref="userDetailsService">
+		<!-- 可设置hash使用sha1或md5散列密码后再存入数据库 -->
+		<s:password-encoder hash="sha" />
+	</s:authentication-provider>
+	
+
+	<!-- 项目实现的用户查询服务 -->
+	<bean id="userDetailsService" class="com.sinosoftframework.core.security.service.UserDetailsServiceImpl" />
+
+	<!-- 重新定义的FilterSecurityInterceptor,使用databaseDefinitionSource提供的url-授权关系定义 -->
+	<bean id="filterSecurityInterceptor" class="org.springframework.security.intercept.web.FilterSecurityInterceptor">
+		<s:custom-filter before="FILTER_SECURITY_INTERCEPTOR" />
+		<property name="accessDecisionManager" ref="accessDecisionManager" />
+		<property name="objectDefinitionSource" ref="databaseDefinitionSource" />
+	</bean>
+
+	<!-- DefinitionSource工厂,使用resourceDetailsService提供的URL-授权关系. -->
+	<bean id="databaseDefinitionSource" class="com.sinosoftframework.core.security.springsecurity.DefinitionSourceFactoryBean">
+		<property name="resourceDetailsService" ref="resourceDetailsService" />
+	</bean>
+	
+	<!-- 项目实现的URL-授权查询服务 -->
+	<bean id="resourceDetailsService" class="com.sinosoftframework.core.security.service.ResourceDetailsServiceImpl" />
+
+	<!-- 授权判断配置, 将授权名称的默认前缀由ROLE_改为A_. -->
+	<bean id="accessDecisionManager" class="org.springframework.security.vote.AffirmativeBased">
+		<property name="decisionVoters">
+			<list>
+				<bean class="org.springframework.security.vote.RoleVoter">
+					<property name="rolePrefix" value="A_" />
+				</bean>
+				<bean class="org.springframework.security.vote.AuthenticatedVoter" />
+			</list>
+		</property>
+	</bean>
+	
+	<!--JCaptcha验证码服务 -->
+	<bean id="captchaService" class="com.octo.captcha.service.image.DefaultManageableImageCaptchaService">
+		<property name="captchaEngine">
+			<bean class="com.sinosoftframework.core.security.jcaptcha.GMailEngine" />
+		</property>
+		<!-- 
+			默认生成的图片180秒过期 , 可另行设置-->
+		<property name="minGuarantedStorageDelayInSeconds" value="180" />
+	</bean>
+	
+	<!-- 使用Ehcache缓存user信息  
+
+    
+	<bean id="userCacheBacked"
+		class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="userCache" />
+	</bean>
+	
+	<bean id="resourceCache" class="com.sinosoftframework.core.security.cache.EhCacheBasedResourceCache"
+        autowire="byName">
+        <property name="cache">
+            <bean class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+                <property name="cacheManager" ref="cacheManager" />
+                <property name="cacheName" value="resourceCache" />
+            </bean>
+        </property>
+    </bean>
+    
+    <bean id="userCache" class="org.springframework.security.providers.dao.cache.EhCacheBasedUserCache">
+        <property name="cache">
+            <bean class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+                <property name="cacheManager" ref="cacheManager" />
+                <property name="cacheName" value="userCache" />
+            </bean>
+        </property>
+    </bean>
+	-->
+	<!--控制一个用户只能在一个IP同时登陆-->
+	<s:authentication-manager alias="authenticationManager" session-controller-ref="currentController" /> 
+	<bean id="concurrentSessionFilter" class="org.springframework.security.concurrent.ConcurrentSessionFilter">
+		<s:custom-filter position="CONCURRENT_SESSION_FILTER" /> 
+		<property name="sessionRegistry" ref="sessionRegistry" /> 
+	</bean>
+	
+	<bean id="sessionRegistry" class="com.sinosoftframework.core.security.sessionControl.SmartSessionRegistry" /> 
+	
+	<bean id="currentController" class="com.sinosoftframework.core.security.sessionControl.SmartConcurrentSessionController">
+		<property name="sessionRegistry" ref="sessionRegistry" /> 
+		<property name="exceptionIfMaximumExceeded" value="true" /> 
+	</bean>
+
+</beans>

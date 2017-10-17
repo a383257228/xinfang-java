@@ -1,0 +1,4 @@
+#系统内网访问地址（端口号后不能加斜杠）
+accessUrl = http://localhost:6888
+#多个合法refer用逗号隔开
+validRefer=http\://localhost\:8080/jubao/,http\://127.0.0.1\:8080/jubao/,http\://192.168.20.3\:6888/jubao/,http\://156.10.1.122/jubao/

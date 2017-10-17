@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlComponent>
+<singleDetailedSelect>
+	 select distinct basic.oid id,basic.region_code regionCode,basic.region_name regionName,basic.curr_petition_no currPetitionNo ,basic.create_date createDate,
+	 basic.petition_no petitionNo,basic.petition_date petitionDate ,basic.petition_prt_no petitionPrtNo ,
+	 basic.deal_Type_Code dealTypeCode ,basic.deal_Type_Name dealTypeName ,basic.petition_type_code petitionTypeCode,basic.petition_type_name petitionTypeName ,
+	 basic.petition_source_code petitionSourceCode,basic.petition_source_name petitionSourceName ,
+	 basic.petition_class_code petitionClassCode,basic.petition_class_name petitionClassName ,basic.require_end_date reguireEndDate ,
+	 lowerBasic.issue_region_code issueRegionCode,lowerBasic.issue_region_name issueRegionName ,basic.curr_dept_name CURRDEPTNAME ,basic.curr_dept_code CURRDEPTCODE,
+	 lowerBasic.object_Class_Name objectClassName ,lowerBasic.object_Class_code OBJECTCLASSCODE,
+	 basic.important_Flag importantFlag,basic.is_distribute_flag isDistributeFlag, basic.creator_Name creatorName,
+	 state.activity_No activityNo,state.activity_name activityName,state.default_Dealer_Name defaultDealerName ,state.default_Supervise_Code defaultSuperviseCode ,
+	<!-- 
+	accuser_name 用 basic.first_accuser代替 accuser.accuser_name accuserName ,
+	 --> 
+	 lowerBasic.first_accuser accuserName ,
+	 basic.is_NetDocument_Open_Flag ISNETDOCUMENTOPENFLAG,
+	 basic.REPEAT_FLAG REPEATFLAG ,basic.REPEAT_NUM REPEATNUM ,
+	 accused.accused_name accusedName,accused.accused_Work_Unit accusedWorkUnit,accused.accused_Position_Name accusedPositionName,
+	 issue.issue_Type_Name issueTypeName,issue.issue_type_code issueTypeCode,issue.issue_Content issueContent 
+</singleDetailedSelect>
+<fromSql>
+	from petition_basic_info basic 
+	inner join petition_basic_info lowerBasic on basic.petition_no=lowerBasic.petition_no 
+	left join petition_circulation_state_info state on basic.oid = state.petition_basic_info_oid 
+	left join petition_deal_info deal on basic.oid = deal.petition_basic_info_oid and deal.valid_flag = '0' 
+	left join PETITION_TRANS_DEAL_INFO trans on deal.oid = trans.petition_deal_info_oid 
+	left join petition_issue_info mainIssue on lowerBasic.oid = mainIssue.petition_basic_info_oid and mainIssue.issue_num = 1  
+	left join petition_accused_info accused on accused.petition_basic_info_oid = lowerBasic.oid and accused.accused_num = '1' 
+</fromSql>
+<whereSqlQS>
+ where 1=1 
+and lowerBasic.region_code = (select max(region_code) from petition_basic_info where petition_no=basic.petition_no) 
+${batch}
+and basic.region_code like  ?  
+and left(basic.region_code,6)=left(basic.curr_petition_no,6)     
+and basic.petition_date &gt;= ?  and basic.petition_date &lt;= ? 
+and not( basic.region_code = ? and basic.petition_source_code in  ('0201','0202') )
+${auth}
+</whereSqlQS>
+<whereSqlBW>
+ where 1=1 
+and lowerBasic.region_code = (select max(region_code) from petition_basic_info where petition_no=basic.petition_no) 
+${batch} 
+and basic.region_code=?
+and basic.petition_date &gt;= ?  and basic.petition_date &lt;= ? 
+and basic.petition_source_code not in  ('0201','0202')
+${auth}
+${xf_region}
+</whereSqlBW>
+<whereSqlBWAll>
+ where 1=1 
+and lowerBasic.region_code = (select max(region_code) from petition_basic_info where petition_no=basic.petition_no) 
+${batch} 
+and basic.region_code = ? 
+and basic.petition_date &gt;= ?  and basic.petition_date &lt;= ? 
+${auth}
+${xf_region}
+</whereSqlBWAll>
+
+<qsJCLCount>
+from (                                                                                                  	
+	select basic.*,ROW_NUMBER() over(partition by COALESCE(r.main_petition_no,basic.petition_no) order by basic.repeat_flag,basic.create_date asc) as rn_1 	
+		from PETITION_BASIC_INFO basic                                                                                            	
+		left join PETITION_REPEAT_INFO r on basic.petition_no = r.petition_no and basic.region_code = r.region_code and r.repeat_flag = '1'                   	
+		left join PETITION_CIRCULATION_STATE_INFO state on basic.oid=state.petition_basic_info_oid                                	
+		left join PETITION_DEAL_INFO deal                                                                                     	
+		on basic.oid = deal.petition_basic_info_oid  and deal.valid_flag='0'                                                      	
+		left join PETITION_TRANS_DEAL_INFO trans  on deal.oid = trans.petition_deal_info_oid                                          	
+	where 1=1                                                                                                               
+	and basic.region_code like  ?  
+	and left(basic.region_code,6)=left(basic.curr_petition_no,6)     
+	and basic.petition_date &gt;= ?  and basic.petition_date &lt;= ?         
+	and not( basic.region_code = ? and basic.petition_source_code in  ('0201','0202') )                                                                                      	
+	and basic.is_count_flag='1'                                                                                               				
+	${batch}                                                                                                  	  
+	${auth}                                                                     
+	${xf_region}                      
+)basic     
+inner join petition_basic_info lowerBasic on basic.petition_no=lowerBasic.petition_no
+${joinTableSql}                                                                                                                    
+where rn_1=1    
+and lowerBasic.region_code = (select max(region_code) from petition_basic_info where petition_no=basic.petition_no)
+and lowerBasic.petition_class_code='1'
+</qsJCLCount>
+
+<bwJCLCount>
+from (                                                                                                  	
+	select basic.*,ROW_NUMBER() over(partition by COALESCE(r.main_petition_no,basic.petition_no) order by basic.repeat_flag,basic.create_date asc) as rn_1 	
+		from PETITION_BASIC_INFO basic                                                                                            	
+		left join PETITION_REPEAT_INFO r on basic.petition_no = r.petition_no and basic.region_code = r.region_code and r.repeat_flag = '1'                   	
+		left join PETITION_CIRCULATION_STATE_INFO state on basic.oid=state.petition_basic_info_oid                                	
+		left join PETITION_DEAL_INFO deal                                                                                     	
+		on basic.oid = deal.petition_basic_info_oid  and deal.valid_flag='0'                                                      	
+		left join PETITION_TRANS_DEAL_INFO trans  on deal.oid = trans.petition_deal_info_oid                                          	
+	where 1=1                                                                                                               
+	and basic.region_code=?
+	and basic.petition_date &gt;= ?  and basic.petition_date &lt;= ?                                                                                               	
+	and basic.is_count_flag='1'                                                                                               				
+	${batch}                                                                                                  	
+	and basic.petition_source_code not in  ('0201','0202')
+	${auth}                                                                     
+	${xf_region}                      
+)basic     
+inner join petition_basic_info lowerBasic on basic.petition_no=lowerBasic.petition_no
+${joinTableSql}                                                                                                                    
+where rn_1=1    
+and lowerBasic.region_code = (select max(region_code) from petition_basic_info where petition_no=basic.petition_no)
+and lowerBasic.petition_class_code='1'
+</bwJCLCount>
+<bwALLJCLCount>
+from (                                                                                                  	
+	select basic.*,ROW_NUMBER() over(partition by COALESCE(r.main_petition_no,basic.petition_no) order by basic.repeat_flag,basic.create_date asc) as rn_1 	
+	from PETITION_BASIC_INFO basic                                                                                            	
+	left join PETITION_REPEAT_INFO r on basic.petition_no = r.petition_no and basic.region_code = r.region_code and r.repeat_flag = '1'                   	
+	left join PETITION_CIRCULATION_STATE_INFO state on basic.oid=state.petition_basic_info_oid                                	
+	left join PETITION_DEAL_INFO deal                                                                                     	
+	on basic.oid = deal.petition_basic_info_oid  and deal.valid_flag='0'                                                      	
+	left join PETITION_TRANS_DEAL_INFO trans  on deal.oid = trans.petition_deal_info_oid                                          	
+	where 1=1                                                                                                               
+	and basic.region_code=?
+	and basic.petition_date &gt;= ?  and basic.petition_date &lt;= ?                                                                                               	
+	and basic.is_count_flag='1'                                                                                               				
+	${batch}                                                                                          	   
+	${auth}                                                                     
+	${xf_region}                      
+)basic     
+inner join petition_basic_info lowerBasic on basic.petition_no=lowerBasic.petition_no
+${joinTableSql}                                                                                                                    
+where rn_1=1    
+and lowerBasic.region_code = (select max(region_code) from petition_basic_info where petition_no=basic.petition_no)
+and lowerBasic.petition_class_code='1'
+</bwALLJCLCount>
+<fromBJCount>
+from  petition_basic_info basic  
+left join petition_accuser_info accuser on accuser.petition_basic_info_oid = basic.oid and accuser.accuser_num = '1'  
+left join petition_accused_info accused on accused.petition_basic_info_oid = basic.oid and accused.accused_num = '1'  
+left join petition_circulation_state_info state on basic.oid = state.petition_basic_info_oid   
+left join petition_issue_info issue on basic.oid = issue.petition_basic_info_oid and issue.issue_num = 1  
+left join  petition_deal_info deal on deal.petition_basic_info_oid=basic.oid  and deal.valid_flag='0'   
+left join petition_survey_deal_info survey on survey.petition_deal_info_oid = deal.oid   
+left join petition_end_info end on end.petition_deal_info_oid = deal.oid and end.valid_flag = '0'
+where 1 = 1   
+and basic.region_Code = ?
+</fromBJCount>
+</sqlComponent>

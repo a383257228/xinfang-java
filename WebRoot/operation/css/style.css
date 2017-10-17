@@ -1,0 +1,28 @@
+.save, .deepblue{
+	background:#2065CB;
+	/* background:#A8A8AA; */
+    line-height: 26px;
+    height: 26px;
+    color: #fff;
+    text-align: center;
+}
+.write{
+	height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border:1px solid #D9D9D9;
+}
+.invalid, .gray{
+	height: 26px;
+    line-height: 26px;
+	background:#A8A8AA;
+	border:1px solid #A8A8AA;
+	color:#fff;
+	text-align:center;
+}
+.update, .lightgreen2,.append, .green{
+	height: 26px;
+    line-height: 26px;
+	text-align:center;
+	
+}

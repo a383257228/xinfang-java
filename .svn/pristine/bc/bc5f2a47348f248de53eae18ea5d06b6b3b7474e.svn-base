@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<child ename="LetterAcceptanceMainPanel" cname="来信受理"></child>
+	<child ename="VisitTalkGridMainPanel" cname="来访受理"></child>
+	<child ename="PhoneAcceptance" cname="电话受理"></child>
+	<child ename="NetAcceptance" cname="网络受理"></child>
+	<child ename="ReceiveAcceptanceMain" cname="签收受理"></child>
+	<child ename="DeptInstruction" cname="领导批示"></child>
+	<child ename="EntryInstruction" cname="录入批示"></child>
+	<child ename="AcceptSign" cname="受理签收"></child>
+	<child ename="AcceptDistribute" cname="受理分发"></child>
+	<child ename="DealDistribute" cname="办理分发"></child>
+	<child ename="DealPlan" cname="办理方案"></child>
+	<child ename="SurveyDealGrid" cname="调查办理"></child>
+	<child ename="PetitionEnd" cname="信访了结"></child>
+	<child ename="PetitionArchive" cname="信访归档"></child>
+	<child ename="AssignedReply" cname="交办回复"></child>
+	<child ename="feedbackContent" cname="交办反馈"></child>
+	<child ename="FeedbackInput" cname="反馈录入"></child>
+</menu>
